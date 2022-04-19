@@ -1,0 +1,20 @@
+body{
+    background-color: bisque;
+    background-position: center;
+}
+.heading{
+    background-color: brown;
+    color: wheat;
+    font-size: 23px;
+    margin: 10px;
+    width: 100%;
+}
+
+a:hover{
+    background-color: brown;
+    color: aliceblue;
+    font-size: 18px;
+    margin: 5px;
+    width: 100%;
+    
+}
