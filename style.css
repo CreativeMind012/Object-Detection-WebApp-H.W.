@@ -10,11 +10,11 @@ body{
     width: 100%;
 }
 
-a:hover{
+a{
     background-color: brown;
     color: aliceblue;
-    font-size: 18px;
+    font: 20px;
     margin: 5px;
-    width: 100%;
-    
+    width: 200;
+    border-radius: 20px; 
 }
