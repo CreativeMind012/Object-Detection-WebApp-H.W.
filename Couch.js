@@ -1,10 +1,10 @@
 status = "";
-objectDetector = "";
+objectDetector ="";
 img = "";
 objectss = [];
 
 function preload(){
-    img = loadImage('bed.jpg');
+    img = loadImage('sofa.jpg');
 }
 function setup(){
     canvas = createCanvas(580, 420);
@@ -23,26 +23,23 @@ function gotResult(error, results){
         console.error(error);
     }
     console.log(results);
-    objectss = results;   
+    objectss = results;
 }
 function draw(){
+    image(img, 0, 0, 580, 420);
     if(status != "")
     {
-        image(img, 0, 0, 580, 420);
         for (i = 0; i < objectss.length; i++) {
             percentage = floor(objectss[i].confidence * 100);
 
             fill("black");
-            text(objectss[i].label + "" + percentage + "%", objectss[i].x + 5,  objectss[i].y + 5);
+            text(objectss[i].label + "" + percentage + "%", objectss[i].x + 5,  objectss[i].y + 10);
             noFill();
             stroke("black");
-            rect( objectss[i].x, objectss[i].y, objectss[i].width, objectss[i].height);
-            console.log("rect");
+            rect( objectss[i].x - 20, objectss[i].y - 20, objectss[i].width, objectss[i].height);
             
             document.getElementById("status").innerHTML = "Status: Objects Detected";
-            document.getElementById("no_objects_detected").innerHTML = "No. of objects in the image: , No. of objects detected: ";
+            document.getElementById("no_objects_detected").innerHTML = "No. of big objects in the image: 1, No. of objects detected: 1";
         }
     }
 }
-/*
-*/
